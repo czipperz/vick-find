@@ -1,3 +1,4 @@
-# My plugin [![Build Status](https://travis-ci.org/czipperz/vick-plugin-base.svg?branch=master)](https://travis-ci.org/czipperz/vick-plugin-base)
+# vick-find [![Build Status](https://travis-ci.org/czipperz/vick-find.svg?branch=master)](https://travis-ci.org/czipperz/vick-find)
 
-What it does, how to use in `configuration.cc`
+This is part of the standard vick suite.  It provides basic "find"
+capabilities that find a single character on the current line.

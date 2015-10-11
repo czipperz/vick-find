@@ -18,7 +18,7 @@ CXX=clang++
 #
 # files=$O/move.o        \
 #       $O/newmove.o
-files=
+files=$O/find.o
 
 # we use ``catch'' as the framework as it is amazing
 # https://github.com/philsquared/Catch
