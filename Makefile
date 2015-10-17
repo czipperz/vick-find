@@ -9,7 +9,7 @@ CXX=clang++
 
 files=$O/find.o
 
-testfiles=
+testfiles=${TO}/find_tests.o
 
 all: ${files}
 
