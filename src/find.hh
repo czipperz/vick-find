@@ -30,7 +30,8 @@
  * \post ``contents.x`` is between ``0`` and
  * ``contents.cont[contents.y].size() - 1``, inclusive
  */
-void move_forward_find(contents& contents, boost::optional<int> times = 1);
+boost::optional< std::shared_ptr<change> > move_forward_find_i(contents& contents, boost::optional<int> times = 1);
+boost::optional< std::shared_ptr<change> > move_forward_find(contents& contents, char char_to_find, int times);
 /*!
  * \brief Moves backward onto a character that is interactively
  * prompted
@@ -52,7 +53,8 @@ void move_forward_find(contents& contents, boost::optional<int> times = 1);
  * \post ``contents.x`` is between ``0`` and
  * ``contents.cont[contents.y].size() - 1``, inclusive
  */
-void move_backward_find(contents& contents, boost::optional<int> times = 1);
+boost::optional< std::shared_ptr<change> > move_backward_find_i(contents& contents, boost::optional<int> times = 1);
+boost::optional< std::shared_ptr<change> > move_backward_find(contents& contents, char char_to_find, int times);
 
 /*!
  * \brief Moves forward onto a character that is interactively
@@ -75,7 +77,8 @@ void move_backward_find(contents& contents, boost::optional<int> times = 1);
  * \post ``contents.x`` is between ``0`` and
  * ``contents.cont[contents.y].size() - 1``, inclusive
  */
-void move_forward_until_match(contents& contents, boost::optional<int> times = 1);
+boost::optional< std::shared_ptr<change> > move_forward_until_match_i(contents& contents, boost::optional<int> times = 1);
+boost::optional< std::shared_ptr<change> > move_forward_until_match(contents& contents, char char_to_find, int times);
 /*!
  * \brief Moves backward onto a character that is interactively
  * prompted then moves forward one
@@ -97,6 +100,7 @@ void move_forward_until_match(contents& contents, boost::optional<int> times = 1
  * \post ``contents.x`` is between ``0`` and
  * ``contents.cont[contents.y].size() - 1``, inclusive
  */
-void move_backward_until_match(contents& contents, boost::optional<int> times = 1);
+boost::optional< std::shared_ptr<change> > move_backward_until_match_i(contents& contents, boost::optional<int> times = 1);
+boost::optional< std::shared_ptr<change> > move_backward_until_match(contents& contents, char char_to_find, int times);
 
 #endif
