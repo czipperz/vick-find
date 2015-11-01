@@ -14,6 +14,7 @@ testfiles=${TO}/find_tests.o
 all: ${files}
 
 begin:
+	git pull
 
 $O/%.o: $S/%.cc $S/%.hh
 	@mkdir -p $O
