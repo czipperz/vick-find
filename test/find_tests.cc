@@ -3,6 +3,9 @@
 #include "../../../test/catch.hpp"
 #include "../src/find.hh"
 
+using namespace vick;
+using namespace vick::find;
+
 TEST_CASE("move_forward_find") {
     contents contents;
     contents.push_back(" hi man search way too hard for me");

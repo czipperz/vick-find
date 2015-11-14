@@ -3,6 +3,9 @@
 
 #include "../../../src/contents.hh"
 
+namespace vick {
+namespace find {
+
 /*!
  * \file find.hh
  * \brief Basic commands that have to do with moving until finding
@@ -102,5 +105,8 @@ boost::optional< std::shared_ptr<change> > move_forward_until_match(contents& co
  */
 boost::optional< std::shared_ptr<change> > move_backward_until_match_i(contents& contents, boost::optional<int> times = 1);
 boost::optional< std::shared_ptr<change> > move_backward_until_match(contents& contents, char char_to_find, int times);
+
+}
+}
 
 #endif

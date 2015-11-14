@@ -3,6 +3,9 @@
 #include "../../../src/show_message.hh"
 #include "find.hh"
 
+namespace vick {
+namespace find {
+
 boost::optional< std::shared_ptr<change> > move_forward_find_i(contents& contents, boost::optional<int> op) {
     return move_forward_find(contents, getch(), op ? op.get() : 1);
 }
@@ -75,4 +78,7 @@ boost::optional< std::shared_ptr<change> > move_backward_until_match(contents& c
     auto ret = move_backward_find(contents, ch, times);
     if(contents.x < contents.cont[contents.y].size() - 1) contents.x++;
     return ret;
+}
+
+}
 }
