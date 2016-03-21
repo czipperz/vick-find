@@ -34,10 +34,12 @@ namespace find {
  * ``contents.cont[contents.y].size() - 1``, inclusive
  */
 boost::optional<std::shared_ptr<change> >
-move_forward_find_i(contents& contents, boost::optional<int> times = 1);
+move_forward_find_i(contents& contents,
+                    boost::optional<int> times = 1);
 
 boost::optional<std::shared_ptr<change> >
-move_forward_find(contents& contents, char char_to_find, int times = 1);
+move_forward_find(contents& contents, char char_to_find,
+                  int times = 1);
 
 /*!
  * \brief Moves backward onto a character that is interactively
@@ -61,10 +63,12 @@ move_forward_find(contents& contents, char char_to_find, int times = 1);
  * ``contents.cont[contents.y].size() - 1``, inclusive
  */
 boost::optional<std::shared_ptr<change> >
-move_backward_find_i(contents& contents, boost::optional<int> times = 1);
+move_backward_find_i(contents& contents,
+                     boost::optional<int> times = 1);
 
 boost::optional<std::shared_ptr<change> >
-move_backward_find(contents& contents, char char_to_find, int times = 1);
+move_backward_find(contents& contents, char char_to_find,
+                   int times = 1);
 
 /*!
  * \brief Moves forward onto a character that is interactively
@@ -88,10 +92,12 @@ move_backward_find(contents& contents, char char_to_find, int times = 1);
  * ``contents.cont[contents.y].size() - 1``, inclusive
  */
 boost::optional<std::shared_ptr<change> >
-move_forward_until_match_i(contents& contents, boost::optional<int> times = 1);
+move_forward_until_match_i(contents& contents,
+                           boost::optional<int> times = 1);
 
 boost::optional<std::shared_ptr<change> >
-move_forward_until_match(contents& contents, char char_to_find, int times = 1);
+move_forward_until_match(contents& contents, char char_to_find,
+                         int times = 1);
 
 /*!
  * \brief Moves backward onto a character that is interactively
@@ -115,11 +121,12 @@ move_forward_until_match(contents& contents, char char_to_find, int times = 1);
  * ``contents.cont[contents.y].size() - 1``, inclusive
  */
 boost::optional<std::shared_ptr<change> >
-move_backward_until_match_i(contents& contents, boost::optional<int> times = 1);
+move_backward_until_match_i(contents& contents,
+                            boost::optional<int> times = 1);
 
 boost::optional<std::shared_ptr<change> >
-move_backward_until_match(contents& contents, char char_to_find, int times = 1);
-
+move_backward_until_match(contents& contents, char char_to_find,
+                          int times = 1);
 }
 }
 
