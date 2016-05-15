@@ -1,7 +1,7 @@
 #ifndef HEADER_GUARD_FIND_H
 #define HEADER_GUARD_FIND_H
 
-#include "../../../src/contents.hh"
+#include "contents.hh"
 
 namespace vick {
 namespace find {

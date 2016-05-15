@@ -1,7 +1,7 @@
 #include <ncurses.h>
 
-#include "../../../test/catch.hpp"
-#include "../src/find.hh"
+#include "catch.hpp"
+#include "find.hh"
 
 using namespace vick;
 using namespace vick::find;

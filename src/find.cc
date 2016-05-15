@@ -1,6 +1,6 @@
 #include <ncurses.h>
 
-#include "../../../src/show_message.hh"
+#include "show_message.hh"
 #include "find.hh"
 
 namespace vick {
