@@ -4,8 +4,8 @@
 
 #include <ncurses.h>
 
-#include "show_message.hh"
 #include "find.hh"
+#include "show_message.hh"
 
 namespace vick {
 namespace find {
