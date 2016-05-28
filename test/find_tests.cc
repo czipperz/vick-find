@@ -6,7 +6,7 @@
 
 #include "catch.hpp"
 
-#include "../src/find.hh"
+#include "../lib.hh"
 
 using namespace vick;
 using namespace vick::find;
