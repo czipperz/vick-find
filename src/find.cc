@@ -12,7 +12,8 @@ namespace find {
 
 boost::optional<std::shared_ptr<change> >
 move_forward_find_i(contents& contents, boost::optional<int> op) {
-    return move_forward_find(contents, getch(), op ? op.get() : 1);
+    return move_forward_find(contents, static_cast<char>(getch()),
+                             op ? op.get() : 1);
 }
 
 boost::optional<std::shared_ptr<change> >
@@ -39,7 +40,8 @@ move_forward_find(contents& contents, char ch, int times) {
 
 boost::optional<std::shared_ptr<change> >
 move_backward_find_i(contents& contents, boost::optional<int> op) {
-    return move_backward_find(contents, getch(), op ? op.get() : 1);
+    return move_backward_find(contents, static_cast<char>(getch()),
+                              op ? op.get() : 1);
 }
 
 boost::optional<std::shared_ptr<change> >
@@ -73,8 +75,8 @@ move_forward_until_match_i(contents& contents,
                            boost::optional<int> op) {
     if (op and op.get() < 0)
         return move_backward_until_match_i(contents, -op.get());
-    auto ret =
-        move_forward_find(contents, getch(), op ? op.get() : 1);
+    auto ret = move_forward_find(contents, static_cast<char>(getch()),
+                                 op ? op.get() : 1);
     if (contents.x > 0)
         contents.x--;
     return ret;
@@ -95,7 +97,8 @@ move_backward_until_match_i(contents& contents,
     if (op and op.get() < 0)
         return move_forward_until_match_i(contents, -op.get());
     auto ret =
-        move_backward_find(contents, getch(), op ? op.get() : 1);
+        move_backward_find(contents, static_cast<char>(getch()),
+                           op ? op.get() : 1);
     if (contents.x < contents.cont[contents.y].size() - 1)
         contents.x++;
     return ret;
