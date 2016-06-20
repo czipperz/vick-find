@@ -22,7 +22,7 @@ TEST_CASE("move_forward_find") {
 
 TEST_CASE("move_backward_find") {
     contents contents({" Simple text to search on"});
-    contents.x = 24;
+    contents.x = contents.cont[0].size() - 1;
 
     move_backward_find(contents, 'e', 1);
     CHECK(contents.x == 17);
@@ -41,7 +41,7 @@ TEST_CASE("move_forward_until_match") {
 
 TEST_CASE("move_backward_until_match") {
     contents contents({" Simple text to search on"});
-    contents.x = 24;
+    contents.x = contents.cont[0].size() - 1;
 
     move_backward_until_match(contents, 'e', 1);
     CHECK(contents.x == 18);
