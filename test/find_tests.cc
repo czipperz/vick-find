@@ -12,8 +12,7 @@ using namespace vick;
 using namespace vick::find;
 
 TEST_CASE("move_forward_find") {
-    contents contents;
-    contents.push_back(" hi man search way too hard for me");
+    contents contents({" hi man search way too hard for me"});
 
     move_forward_find(contents, 'o', 2);
     CHECK(contents.x == 21);
@@ -22,8 +21,7 @@ TEST_CASE("move_forward_find") {
 }
 
 TEST_CASE("move_backward_find") {
-    contents contents;
-    contents.push_back(" Simple text to search on");
+    contents contents({" Simple text to search on"});
     contents.x = 24;
 
     move_backward_find(contents, 'e', 1);
@@ -33,8 +31,7 @@ TEST_CASE("move_backward_find") {
 }
 
 TEST_CASE("move_forward_until_match") {
-    contents contents;
-    contents.push_back(" hi man search way too hard for me");
+    contents contents({" hi man search way too hard for me"});
 
     move_forward_until_match(contents, 'o', 2);
     CHECK(contents.x == 20);
@@ -43,8 +40,7 @@ TEST_CASE("move_forward_until_match") {
 }
 
 TEST_CASE("move_backward_until_match") {
-    contents contents;
-    contents.push_back(" Simple text to search on");
+    contents contents({" Simple text to search on"});
     contents.x = 24;
 
     move_backward_until_match(contents, 'e', 1);
