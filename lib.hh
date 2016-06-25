@@ -11,7 +11,7 @@ namespace vick {
 namespace find {
 
 /*!
- * \file
+ * \file vick-find/lib.hh
  * \brief Basic commands that have to do with moving until finding
  * characters
  */
