@@ -10,18 +10,18 @@
 namespace vick {
 namespace find {
 
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 move_forward_find_i(contents& contents, boost::optional<int> op) {
     return move_forward_find(contents, static_cast<char>(getch()),
                              op ? op.get() : 1);
 }
 
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 move_forward_find(contents& contents, char ch, int times) {
     if (times < 0)
         return move_backward_find(contents, ch, -times);
     if (contents.cont[contents.y].size() - contents.x < 1)
-        return boost::none;
+        return nullptr;
 
     auto new_x = contents.x + 1;
 
@@ -31,25 +31,25 @@ move_forward_find(contents& contents, char ch, int times) {
         }
         if (times == 0) {
             contents.x = new_x;
-            return boost::none;
+            return nullptr;
         }
     }
     show_message(std::string("Can't find '") + ch + '\'');
-    return boost::none;
+    return nullptr;
 }
 
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 move_backward_find_i(contents& contents, boost::optional<int> op) {
     return move_backward_find(contents, static_cast<char>(getch()),
                               op ? op.get() : 1);
 }
 
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 move_backward_find(contents& contents, char ch, int times) {
     if (times < 0)
         return move_forward_find(contents, ch, -times);
     if (contents.x < 1)
-        return boost::none;
+        return nullptr;
 
     auto new_x = contents.x - 1;
 
@@ -59,18 +59,18 @@ move_backward_find(contents& contents, char ch, int times) {
         }
         if (times == 0) {
             contents.x = new_x;
-            return boost::none;
+            return nullptr;
         }
     }
     if (times == 1 and contents.cont[contents.y][0] == ch) {
         contents.x = 0;
-        return boost::none;
+        return nullptr;
     }
     show_message(std::string("Can't find '") + ch + '\'');
-    return boost::none;
+    return nullptr;
 }
 
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 move_forward_until_match_i(contents& contents,
                            boost::optional<int> op) {
     if (op and op.get() < 0)
@@ -81,7 +81,7 @@ move_forward_until_match_i(contents& contents,
         contents.x--;
     return ret;
 }
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 move_forward_until_match(contents& contents, char ch, int times) {
     if (times < 0)
         return move_backward_until_match(contents, ch, -times);
@@ -91,7 +91,7 @@ move_forward_until_match(contents& contents, char ch, int times) {
     return ret;
 }
 
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 move_backward_until_match_i(contents& contents,
                             boost::optional<int> op) {
     if (op and op.get() < 0)
@@ -103,7 +103,7 @@ move_backward_until_match_i(contents& contents,
         contents.x++;
     return ret;
 }
-boost::optional<std::shared_ptr<change> >
+std::shared_ptr<change>
 move_backward_until_match(contents& contents, char ch, int times) {
     if (times < 0)
         return move_forward_until_match(contents, ch, -times);
